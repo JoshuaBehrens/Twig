@@ -66,6 +66,7 @@ use Twig\TokenParser\ImportTokenParser;
 use Twig\TokenParser\IncludeTokenParser;
 use Twig\TokenParser\MacroTokenParser;
 use Twig\TokenParser\SetTokenParser;
+use Twig\TokenParser\TypeHintTokenParser;
 use Twig\TokenParser\UseTokenParser;
 use Twig\TokenParser\WithTokenParser;
 use Twig\TwigFilter;
@@ -170,6 +171,7 @@ final class CoreExtension extends AbstractExtension
             new EmbedTokenParser(),
             new WithTokenParser(),
             new DeprecatedTokenParser(),
+            new TypeHintTokenParser(),
         ];
     }
 
