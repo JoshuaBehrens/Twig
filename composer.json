@@ -33,8 +33,9 @@
         "symfony/phpunit-bridge": "^5.4.9|^6.3|^7.0",
         "psr/container": "^1.0|^2.0"
     },
+    "version": "3.8",
     "replace": {
-        "twig/twig": "*"
+        "twig/twig": "3.8"
     },
     "autoload": {
         "psr-4" : {
