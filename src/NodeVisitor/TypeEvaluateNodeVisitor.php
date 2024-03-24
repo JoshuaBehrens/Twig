@@ -129,7 +129,11 @@ final class TypeEvaluateNodeVisitor implements NodeVisitorInterface
                 // TODO push state
                 /** @var AssignNameExpression $innerNameNode */
                 foreach ($node->getNode('names') as $nameIndex => $innerNameNode) {
-                    $typedVariables[$innerNameNode->getAttribute('name')] = $node->getNode('values')->getNode($nameIndex)->getAttribute('typeHint');
+                    $valuesNodeAt = $node->getNode('values')->getNode($nameIndex);
+
+                    if ($valuesNodeAt->hasAttribute('typeHint')) {
+                        $typedVariables[$innerNameNode->getAttribute('name')] = $valuesNodeAt->getAttribute('typeHint');
+                    }
                 }
             }
 
